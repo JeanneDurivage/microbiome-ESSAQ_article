@@ -7,7 +7,7 @@ Corresponding author: Marie-Élise Samson (marie-elise.samson@fsaa.ulaval.ca)
 ## Abstract
 <--- Insert abstract here --->
 
-*Read the full research article here : \[doi will be inserted here\]
+*Read the full research article here : \[doi will be inserted here\]*
 
 
 This work is licensed under a
