@@ -50,3 +50,10 @@ rsconnect/
 
 # Data protected by intitutional contracts and farmers-institutions agreements
 data/
+/temp
+scripts/.Rprofile
+*.Rmd
+/scripts/renv
+scripts/scripts.Rproj
+/data_private
+/figures_article
