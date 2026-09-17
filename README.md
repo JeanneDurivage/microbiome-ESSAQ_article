@@ -1,4 +1,6 @@
-[![CC BY 4.0][cc-by-shield]][cc-by]
+[![CC BY 4.0][cc-by-shield]][cc-by]   
+[![DOI](https://zenodo.org/badge/895204655.svg)](https://doi.org/10.5281/zenodo.22816796)
+
 # Code, supporting data and supplementary materials for *Pedological classification as a key determinant of arable soil microbial communities*
 Jeanne Durivage, Thiago Gumiere, Richard Hogue, Thomas Jeanne, Marc-Olivier Gasser, Mary-Cathrine Leewis, Marie-Élise Samson
 
