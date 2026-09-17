@@ -916,10 +916,11 @@ all_signif_taxa <-
       taxon_phylum == "d__Bacteria_p__Actinobacteriota_c__Thermoleophilia_o___ (NA)" ~
         "Thermoleophilia class (Actinobacteriota)",
       .default = taxon_phylum
-      )
+      ),
+    adj_p = signif(q, digits = 3)
   ) |> 
   select(Community, Ped._gr., taxon_phylum, Treatment, 
-         Effect_size_log, Effect_size, signf) |> 
+         Effect_size_log, Effect_size, adj_p, signf) |> 
   arrange(Community, Ped._gr., Treatment)
 ```
 
@@ -927,50 +928,50 @@ all_signif_taxa <-
 knitr::kable(all_signif_taxa)
 ```
 
-| Community | Ped.\_gr. | taxon_phylum | Treatment | Effect_size_log | Effect_size | signf |
-|:---|:---|:---|:---|---:|---:|:---|
-| 16S | Humic orthic gleysol | Thermoleophilia class (Actinobacteriota) | L-Dairy vs No-OF | -2.00 | -7.36 | \*\* |
-| 16S | Humic orthic gleysol | Microscillaceae (Bacteroidota) | L-Hog vs No-OF | -1.27 | -3.57 | \* |
-| 16S | Humic orthic gleysol | Bdellovibrionaceae (Bdellovibrionota) | L-Hog vs No-OF | -1.68 | -5.38 | \* |
-| 16S | Humic orthic gleysol | Cellvibrionaceae (Proteobacteria) | L-Hog vs No-OF | -2.26 | -9.58 | \* |
-| 16S | Humic orthic gleysol | Peptostreptococcaceae (Firmicutes) | S-Poultry vs L-Hog | -2.77 | -16.00 | \*\*\* |
-| 16S | Humic orthic gleysol | Flavobacteriaceae (Bacteroidota) | S-Poultry vs No-OF | -1.18 | -3.26 | \* |
-| 16S | Orthic gleysol | Micromonosporaceae (Actinobacteriota) | L-Dairy vs No-OF | -2.66 | -14.40 | \* |
-| 16S | Orthic gleysol | Paenibacillaceae (Firmicutes) | L-Dairy vs No-OF | 2.78 | 16.10 | \* |
-| 16S | Orthic gleysol | WD2101_soil_group (Planctomycetota) | L-Dairy vs No-OF | -2.15 | -8.55 | \* |
-| 16S | Orthic gleysol | Azospirillaceae (Proteobacteria) | L-Dairy vs No-OF | -2.56 | -12.90 | \* |
-| 16S | Orthic gleysol | A0839 (Proteobacteria) | L-Dairy vs No-OF | 4.41 | 82.40 | \* |
-| 16S | Orthic gleysol | Micromonosporaceae (Actinobacteriota) | L-Hog vs No-OF | -2.46 | -11.70 | \* |
-| 16S | Orthic gleysol | Roseiflexaceae (Chloroflexi) | L-Hog vs No-OF | -2.16 | -8.66 | \*\* |
-| 16S | Orthic gleysol | Paenibacillaceae (Firmicutes) | L-Hog vs No-OF | 2.53 | 12.60 | \*\*\* |
-| 16S | Orthic gleysol | WD2101_soil_group (Planctomycetota) | L-Hog vs No-OF | -2.22 | -9.24 | \* |
-| 16S | Orthic gleysol | Hyphomonadaceae (Proteobacteria) | L-Hog vs No-OF | 2.17 | 8.75 | \* |
-| 16S | Orthic gleysol | A0839 (Proteobacteria) | L-Hog vs No-OF | 4.40 | 81.70 | \*\* |
-| 16S | Orthic gleysol | Xanthomonadaceae (Proteobacteria) | L-Hog vs No-OF | 1.07 | 2.91 | \* |
-| 16S | Orthic gleysol | Pedosphaeraceae (Verrucomicrobiota) | L-Hog vs No-OF | -1.38 | -3.97 | \* |
-| 16S | Orthic gleysol | Micromonosporaceae (Actinobacteriota) | S-Poultry vs L-Dairy | 2.60 | 13.40 | \* |
-| 16S | Orthic gleysol | RBG-13-54-9 (Chloroflexi) | S-Poultry vs L-Dairy | -2.39 | -10.90 | \* |
-| 16S | Orthic gleysol | WX65 (Methylomirabilota) | S-Poultry vs L-Dairy | -2.46 | -11.70 | \* |
-| 16S | Orthic gleysol | WD2101_soil_group (Planctomycetota) | S-Poultry vs L-Dairy | 2.26 | 9.58 | \* |
-| 16S | Orthic gleysol | Azospirillaceae (Proteobacteria) | S-Poultry vs L-Dairy | 2.71 | 15.00 | \* |
-| 16S | Orthic gleysol | A0839 (Proteobacteria) | S-Poultry vs L-Dairy | -3.70 | -40.60 | \*\* |
-| 16S | Orthic gleysol | Micromonosporaceae (Actinobacteriota) | S-Poultry vs L-Hog | 2.39 | 10.90 | \* |
-| 16S | Orthic gleysol | Roseiflexaceae (Chloroflexi) | S-Poultry vs L-Hog | 2.46 | 11.80 | \*\* |
-| 16S | Orthic gleysol | WD2101_soil_group (Planctomycetota) | S-Poultry vs L-Hog | 2.34 | 10.40 | \*\* |
-| 16S | Orthic gleysol | Isosphaeraceae (Planctomycetota) | S-Poultry vs L-Hog | 2.95 | 19.10 | \*\* |
-| 16S | Orthic gleysol | A0839 (Proteobacteria) | S-Poultry vs L-Hog | -3.70 | -40.30 | \*\* |
-| 16S | Orthic gleysol | Streptosporangiaceae (Actinobacteriota) | S-Poultry vs No-OF | 1.98 | 7.28 | \* |
-| ITS | Humic orthic gleysol | Mycosphaerellaceae (Ascomycota) | L-Dairy vs No-OF | -2.58 | -13.20 | \* |
-| ITS | Humic orthic gleysol | Cantharellales order (Basidiomycota) | L-Dairy vs No-OF | -2.57 | -13.10 | \* |
-| ITS | Humic orthic gleysol | Sporormiaceae (Ascomycota) | S-Poultry vs L-Dairy | -2.54 | -12.70 | \* |
-| ITS | Humic orthic gleysol | Cantharellales order (Basidiomycota) | S-Poultry vs L-Dairy | 3.91 | 49.90 | \*\* |
-| ITS | Humo-ferric podzol | Strophariaceae (Basidiomycota) | L-Dairy vs No-OF | -4.22 | -68.00 | \*\*\* |
-| ITS | Humo-ferric podzol | Chaetothyriales order (Ascomycota) | STIR | -1.19 | -3.27 | \* |
-| ITS | Humo-ferric podzol | Cephalothecaceae (Ascomycota) | STIR | 1.84 | 6.29 | \* |
-| ITS | Orthic gleysol | Sanchytriaceae (Monoblepharomycota) | L-Dairy vs No-OF | 4.38 | 79.90 | \* |
-| ITS | Orthic gleysol | Sanchytriaceae (Monoblepharomycota) | S-Poultry vs L-Dairy | -5.06 | -157.00 | \* |
-| ITS | Orthic gleysol | Leotiaceae (Ascomycota) | S-Poultry vs L-Hog | 4.76 | 116.00 | \* |
-| ITS | Orthic gleysol | Onygenaceae (Ascomycota) | S-Poultry vs No-OF | -4.33 | -76.00 | \*\*\* |
+| Community | Ped.\_gr. | taxon_phylum | Treatment | Effect_size_log | Effect_size | adj_p | signf |
+|:---|:---|:---|:---|---:|---:|---:|:---|
+| 16S | Humic orthic gleysol | Thermoleophilia class (Actinobacteriota) | L-Dairy vs No-OF | -2.00 | -7.36 | 1.72e-03 | \*\* |
+| 16S | Humic orthic gleysol | Microscillaceae (Bacteroidota) | L-Hog vs No-OF | -1.27 | -3.57 | 5.16e-03 | \* |
+| 16S | Humic orthic gleysol | Bdellovibrionaceae (Bdellovibrionota) | L-Hog vs No-OF | -1.68 | -5.38 | 5.66e-03 | \* |
+| 16S | Humic orthic gleysol | Cellvibrionaceae (Proteobacteria) | L-Hog vs No-OF | -2.26 | -9.58 | 7.29e-03 | \* |
+| 16S | Humic orthic gleysol | Peptostreptococcaceae (Firmicutes) | S-Poultry vs L-Hog | -2.77 | -16.00 | 3.48e-05 | \*\*\* |
+| 16S | Humic orthic gleysol | Flavobacteriaceae (Bacteroidota) | S-Poultry vs No-OF | -1.18 | -3.26 | 5.75e-03 | \* |
+| 16S | Orthic gleysol | Micromonosporaceae (Actinobacteriota) | L-Dairy vs No-OF | -2.66 | -14.40 | 1.10e-02 | \* |
+| 16S | Orthic gleysol | Paenibacillaceae (Firmicutes) | L-Dairy vs No-OF | 2.78 | 16.10 | 8.84e-03 | \* |
+| 16S | Orthic gleysol | WD2101_soil_group (Planctomycetota) | L-Dairy vs No-OF | -2.15 | -8.55 | 5.95e-03 | \* |
+| 16S | Orthic gleysol | Azospirillaceae (Proteobacteria) | L-Dairy vs No-OF | -2.56 | -12.90 | 6.66e-03 | \* |
+| 16S | Orthic gleysol | A0839 (Proteobacteria) | L-Dairy vs No-OF | 4.41 | 82.40 | 5.42e-03 | \* |
+| 16S | Orthic gleysol | Micromonosporaceae (Actinobacteriota) | L-Hog vs No-OF | -2.46 | -11.70 | 1.07e-02 | \* |
+| 16S | Orthic gleysol | Roseiflexaceae (Chloroflexi) | L-Hog vs No-OF | -2.16 | -8.66 | 1.08e-03 | \*\* |
+| 16S | Orthic gleysol | Paenibacillaceae (Firmicutes) | L-Hog vs No-OF | 2.53 | 12.60 | 3.13e-04 | \*\*\* |
+| 16S | Orthic gleysol | WD2101_soil_group (Planctomycetota) | L-Hog vs No-OF | -2.22 | -9.24 | 3.89e-03 | \* |
+| 16S | Orthic gleysol | Hyphomonadaceae (Proteobacteria) | L-Hog vs No-OF | 2.17 | 8.75 | 1.61e-02 | \* |
+| 16S | Orthic gleysol | A0839 (Proteobacteria) | L-Hog vs No-OF | 4.40 | 81.70 | 3.27e-03 | \*\* |
+| 16S | Orthic gleysol | Xanthomonadaceae (Proteobacteria) | L-Hog vs No-OF | 1.07 | 2.91 | 9.63e-03 | \* |
+| 16S | Orthic gleysol | Pedosphaeraceae (Verrucomicrobiota) | L-Hog vs No-OF | -1.38 | -3.97 | 1.54e-02 | \* |
+| 16S | Orthic gleysol | Micromonosporaceae (Actinobacteriota) | S-Poultry vs L-Dairy | 2.60 | 13.40 | 1.29e-02 | \* |
+| 16S | Orthic gleysol | RBG-13-54-9 (Chloroflexi) | S-Poultry vs L-Dairy | -2.39 | -10.90 | 4.28e-03 | \* |
+| 16S | Orthic gleysol | WX65 (Methylomirabilota) | S-Poultry vs L-Dairy | -2.46 | -11.70 | 9.37e-03 | \* |
+| 16S | Orthic gleysol | WD2101_soil_group (Planctomycetota) | S-Poultry vs L-Dairy | 2.26 | 9.58 | 5.18e-03 | \* |
+| 16S | Orthic gleysol | Azospirillaceae (Proteobacteria) | S-Poultry vs L-Dairy | 2.71 | 15.00 | 1.59e-02 | \* |
+| 16S | Orthic gleysol | A0839 (Proteobacteria) | S-Poultry vs L-Dairy | -3.70 | -40.60 | 2.81e-03 | \*\* |
+| 16S | Orthic gleysol | Micromonosporaceae (Actinobacteriota) | S-Poultry vs L-Hog | 2.39 | 10.90 | 1.38e-02 | \* |
+| 16S | Orthic gleysol | Roseiflexaceae (Chloroflexi) | S-Poultry vs L-Hog | 2.46 | 11.80 | 1.42e-03 | \*\* |
+| 16S | Orthic gleysol | WD2101_soil_group (Planctomycetota) | S-Poultry vs L-Hog | 2.34 | 10.40 | 3.04e-03 | \*\* |
+| 16S | Orthic gleysol | Isosphaeraceae (Planctomycetota) | S-Poultry vs L-Hog | 2.95 | 19.10 | 2.62e-03 | \*\* |
+| 16S | Orthic gleysol | A0839 (Proteobacteria) | S-Poultry vs L-Hog | -3.70 | -40.30 | 2.03e-03 | \*\* |
+| 16S | Orthic gleysol | Streptosporangiaceae (Actinobacteriota) | S-Poultry vs No-OF | 1.98 | 7.28 | 5.43e-03 | \* |
+| ITS | Humic orthic gleysol | Mycosphaerellaceae (Ascomycota) | L-Dairy vs No-OF | -2.58 | -13.20 | 1.00e-02 | \* |
+| ITS | Humic orthic gleysol | Cantharellales order (Basidiomycota) | L-Dairy vs No-OF | -2.57 | -13.10 | 4.68e-03 | \* |
+| ITS | Humic orthic gleysol | Sporormiaceae (Ascomycota) | S-Poultry vs L-Dairy | -2.54 | -12.70 | 1.46e-02 | \* |
+| ITS | Humic orthic gleysol | Cantharellales order (Basidiomycota) | S-Poultry vs L-Dairy | 3.91 | 49.90 | 2.10e-03 | \*\* |
+| ITS | Humo-ferric podzol | Strophariaceae (Basidiomycota) | L-Dairy vs No-OF | -4.22 | -68.00 | 2.92e-04 | \*\*\* |
+| ITS | Humo-ferric podzol | Chaetothyriales order (Ascomycota) | STIR | -1.19 | -3.27 | 8.48e-03 | \* |
+| ITS | Humo-ferric podzol | Cephalothecaceae (Ascomycota) | STIR | 1.84 | 6.29 | 7.46e-03 | \* |
+| ITS | Orthic gleysol | Sanchytriaceae (Monoblepharomycota) | L-Dairy vs No-OF | 4.38 | 79.90 | 1.27e-02 | \* |
+| ITS | Orthic gleysol | Sanchytriaceae (Monoblepharomycota) | S-Poultry vs L-Dairy | -5.06 | -157.00 | 1.59e-02 | \* |
+| ITS | Orthic gleysol | Leotiaceae (Ascomycota) | S-Poultry vs L-Hog | 4.76 | 116.00 | 1.04e-02 | \* |
+| ITS | Orthic gleysol | Onygenaceae (Ascomycota) | S-Poultry vs No-OF | -4.33 | -76.00 | 2.32e-04 | \*\*\* |
 
 Saving the results (corresponds to suplementary material 8)
 
