@@ -124,7 +124,7 @@ article_fig_path  <- file.path(github_path, "figures_article")
 data_path         <- file.path(github_path, "data")
 private_data_path <- file.path(github_path, "data_private")
 
-knitr::opts_chunk$set(fig.path = paste0(fig_path, "/"))
+knitr::opts_chunk$set(fig.path = "figures/")
 ```
 
 # 2 Data preparation
@@ -622,7 +622,7 @@ data_long |>
   )
 ```
 
-![](C:/Users/Jeann/Documents/manuscrit/microbiome-ESSAQ_article/figures/04_fig6-1.png)<!-- -->
+![](figures/04_fig6-1.png)<!-- -->
 
 ``` r
 ggsave(file.path(article_fig_path, "fig6.pdf"), width = 15, height = 10, units = "in")

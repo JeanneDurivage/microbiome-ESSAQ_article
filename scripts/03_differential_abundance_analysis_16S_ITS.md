@@ -127,7 +127,7 @@ article_fig_path  <- file.path(github_path, "figures_article")
 data_path         <- file.path(github_path, "data")
 private_data_path <- file.path(github_path, "data_private")
 
-knitr::opts_chunk$set(fig.path = paste0(fig_path, "/"))
+knitr::opts_chunk$set(fig.path = "figures/")
 ```
 
 # 2 Function creation
@@ -1046,7 +1046,7 @@ ggarrange(p_16S, p_ITS,
           labels = c("(a)", "(b)"), ncol = 1)
 ```
 
-![](C:/Users/Jeann/Documents/manuscrit/microbiome-ESSAQ_article/figures/03_fig5-1.png)<!-- -->
+![](figures/03_fig5-1.png)<!-- -->
 
 ``` r
 ggsave(file.path(article_fig_path, "fig5.pdf"), 
@@ -1111,23 +1111,24 @@ sessionInfo()
     ##  [70] gld_2.6.8               tools_4.4.1             foreign_0.8-91         
     ##  [73] otel_0.2.0              ape_5.8-1               nnet_7.3-21            
     ##  [76] glue_1.8.1              nlme_3.1-170            rhdf5filters_1.18.1    
-    ##  [79] grid_4.4.1              checkmate_2.3.4         cluster_2.1.8.3        
-    ##  [82] reshape2_1.4.5          ade4_1.7-24             generics_0.1.4         
-    ##  [85] gtable_0.3.6            tzdb_0.5.0              class_7.3-24           
-    ##  [88] data.table_1.18.6.1     lmom_3.3                hms_1.1.4              
-    ##  [91] car_3.1-5               XVector_0.46.0          BiocGenerics_0.52.0    
-    ##  [94] pillar_1.11.1           splines_4.4.1           lattice_0.23-1         
-    ##  [97] renv_1.1.4              survival_3.8-11         gmp_0.7-5.1            
-    ## [100] bit_4.6.0               tidyselect_1.2.1        Biostrings_2.74.1      
-    ## [103] knitr_1.51              reformulas_0.4.4        gridExtra_2.3.1        
-    ## [106] IRanges_2.40.1          stats4_4.4.1            xfun_0.60              
-    ## [109] expm_1.0-1              Biobase_2.66.0          skimr_2.2.2            
-    ## [112] stringi_1.8.9           UCSC.utils_1.2.0        yaml_2.3.12            
-    ## [115] boot_1.3-32             evaluate_1.0.5          codetools_0.2-20       
-    ## [118] BiocManager_1.30.27     cli_3.6.6               rpart_4.1.27           
-    ## [121] systemfonts_1.3.2       DescTools_0.99.60       Rdpack_2.6.6           
-    ## [124] repr_1.1.7              Rcpp_1.1.2              GenomeInfoDb_1.42.3    
-    ## [127] readxl_1.5.0            parallel_4.4.1          lme4_2.0-6             
-    ## [130] Rmpfr_1.1-2             mvtnorm_1.4-2           lmerTest_3.2-1         
-    ## [133] scales_1.4.0            e1071_1.7-17            crayon_1.5.3           
-    ## [136] rlang_1.3.0             cowplot_1.2.0           multcomp_1.4-32
+    ##  [79] grid_4.4.1              Rtsne_0.17              checkmate_2.3.4        
+    ##  [82] cluster_2.1.8.3         reshape2_1.4.5          ade4_1.7-24            
+    ##  [85] generics_0.1.4          microbiome_1.28.0       gtable_0.3.6           
+    ##  [88] tzdb_0.5.0              class_7.3-24            data.table_1.18.6.1    
+    ##  [91] lmom_3.3                hms_1.1.4               car_3.1-5              
+    ##  [94] XVector_0.46.0          BiocGenerics_0.52.0     pillar_1.11.1          
+    ##  [97] splines_4.4.1           lattice_0.23-1          renv_1.1.4             
+    ## [100] survival_3.8-11         gmp_0.7-5.1             bit_4.6.0              
+    ## [103] tidyselect_1.2.1        Biostrings_2.74.1       knitr_1.51             
+    ## [106] reformulas_0.4.4        gridExtra_2.3.1         IRanges_2.40.1         
+    ## [109] stats4_4.4.1            xfun_0.60               expm_1.0-1             
+    ## [112] Biobase_2.66.0          skimr_2.2.2             stringi_1.8.9          
+    ## [115] UCSC.utils_1.2.0        yaml_2.3.12             boot_1.3-32            
+    ## [118] evaluate_1.0.5          codetools_0.2-20        BiocManager_1.30.27    
+    ## [121] cli_3.6.6               rpart_4.1.27            systemfonts_1.3.2      
+    ## [124] DescTools_0.99.60       Rdpack_2.6.6            repr_1.1.7             
+    ## [127] Rcpp_1.1.2              GenomeInfoDb_1.42.3     readxl_1.5.0           
+    ## [130] parallel_4.4.1          lme4_2.0-6              Rmpfr_1.1-2            
+    ## [133] mvtnorm_1.4-2           lmerTest_3.2-1          scales_1.4.0           
+    ## [136] e1071_1.7-17            crayon_1.5.3            rlang_1.3.0            
+    ## [139] cowplot_1.2.0           multcomp_1.4-32

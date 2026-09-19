@@ -132,7 +132,7 @@ article_fig_path  <- file.path(github_path, "figures_article")
 data_path         <- file.path(github_path, "data")
 private_data_path <- file.path(github_path, "data_private")
 
-knitr::opts_chunk$set(fig.path = paste0(fig_path, "/"))
+knitr::opts_chunk$set(fig.path = "figures/")
 ```
 
 # 1 Starting data
@@ -229,7 +229,7 @@ ggbiplot::ggbiplot(pca,
   labs(fill = "Pedologic group", color = "Pedologic group")
 ```
 
-![](C:/Users/Jeann/Documents/manuscrit/microbiome-ESSAQ_article/figures/02_PCA_soil_climate-1.png)<!-- -->
+![](figures/02_PCA_soil_climate-1.png)<!-- -->
 
 # 3 PERMANOVA on pedologic groups
 
@@ -478,7 +478,7 @@ ggplot(env_long, aes(Ped._gr., value, fill = Ped._gr.)) +
   )
 ```
 
-![](C:/Users/Jeann/Documents/manuscrit/microbiome-ESSAQ_article/figures/02_Fig4-1.png)<!-- -->
+![](figures/02_Fig4-1.png)<!-- -->
 
 ``` r
 ggsave(file.path(article_fig_path, "fig4.pdf"), width = 15, height = 10, units = "in")

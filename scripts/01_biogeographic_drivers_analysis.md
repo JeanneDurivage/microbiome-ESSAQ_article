@@ -115,7 +115,7 @@ article_fig_path  <- file.path(github_path, "figures_article")
 data_path         <- file.path(github_path, "data")
 private_data_path <- file.path(github_path, "data_private")
 
-knitr::opts_chunk$set(fig.path = paste0(fig_path, "/"))
+knitr::opts_chunk$set(fig.path = "figures/")
 ```
 
 # 2 Starting data
@@ -273,7 +273,7 @@ corrplot::corrplot(cor_env,
 )
 ```
 
-![](C:/Users/Jeann/Documents/manuscrit/microbiome-ESSAQ_article/figures/01_explanatory_var_correlations-1.png)<!-- -->
+![](figures/01_explanatory_var_correlations-1.png)<!-- -->
 
 ``` r
 cor_env |>
@@ -613,7 +613,7 @@ print(RsquareAdj(dbRDA_16S$dbRDA)$adj.r.squared)
 plot(dbRDA_16S$dbRDA, display = c("sites", "bp"))
 ```
 
-![](C:/Users/Jeann/Documents/manuscrit/microbiome-ESSAQ_article/figures/01_dbRDA_16S-1.png)<!-- -->
+![](figures/01_dbRDA_16S-1.png)<!-- -->
 
 **Variables p-value and partial R2s**
 
@@ -682,7 +682,7 @@ print(RsquareAdj(dbRDA_ITS$dbRDA)$adj.r.squared)
 plot(dbRDA_ITS$dbRDA, display = c("sites", "bp"))
 ```
 
-![](C:/Users/Jeann/Documents/manuscrit/microbiome-ESSAQ_article/figures/01_dbRDA_ITS-1.png)<!-- -->
+![](figures/01_dbRDA_ITS-1.png)<!-- -->
 
 **Variables p-value and partial R2s**
 
@@ -761,7 +761,7 @@ print(RsquareAdj(dbRDA_C_fct$dbRDA)$adj.r.squared)
 plot(dbRDA_C_fct$dbRDA, display = c("sites", "bp"))
 ```
 
-![](C:/Users/Jeann/Documents/manuscrit/microbiome-ESSAQ_article/figures/01_dbRDA_C_fct-1.png)<!-- -->
+![](figures/01_dbRDA_C_fct-1.png)<!-- -->
 
 **Variables p-value and partial R2s**
 
@@ -866,7 +866,7 @@ ggarrange(patch_16S, patch_C_fct, patch_ITS,
           nrow = 1)
 ```
 
-![](C:/Users/Jeann/Documents/manuscrit/microbiome-ESSAQ_article/figures/01_Fig2-1.png)<!-- -->
+![](figures/01_Fig2-1.png)<!-- -->
 
 ``` r
 ggsave("fig2.pdf", device = "pdf", path = article_fig_path, create.dir = TRUE,
@@ -1068,7 +1068,7 @@ For reference, here is how the variance part are named :
 showvarparts(3)
 ```
 
-![](C:/Users/Jeann/Documents/manuscrit/microbiome-ESSAQ_article/figures/01_reference_venn_plot-1.png)<!-- -->
+![](figures/01_reference_venn_plot-1.png)<!-- -->
 
 ## 5.1 16S (ASV)
 
@@ -1140,7 +1140,7 @@ print(varpart_16S$varpart)
 plot(varpart_16S$varpart, cutoff = 0, digits = 1, bg = c("#E1C901", "#DC3220", "#1E88E5"))
 ```
 
-![](C:/Users/Jeann/Documents/manuscrit/microbiome-ESSAQ_article/figures/01_venn_plot_16S-1.png)<!-- -->
+![](figures/01_venn_plot_16S-1.png)<!-- -->
 
 **TOTAL contribution per variable group**
 
@@ -1224,7 +1224,7 @@ print(varpart_ITS$varpart)
 plot(varpart_ITS$varpart, cutoff = 0, digits = 1, bg = c("#E1C901", "#DC3220", "#1E88E5"))
 ```
 
-![](C:/Users/Jeann/Documents/manuscrit/microbiome-ESSAQ_article/figures/01_venn_plot_ITS-1.png)<!-- -->
+![](figures/01_venn_plot_ITS-1.png)<!-- -->
 
 **TOTAL contribution per variable group**
 
@@ -1310,7 +1310,7 @@ plot(varpart_C_fct$varpart,
      bg = c("#E1C901", "#DC3220", "#1E88E5"))
 ```
 
-![](C:/Users/Jeann/Documents/manuscrit/microbiome-ESSAQ_article/figures/01_venn_plot_C_cycling-1.png)<!-- -->
+![](figures/01_venn_plot_C_cycling-1.png)<!-- -->
 
 **TOTAL contribution per variable group**
 
@@ -1369,7 +1369,7 @@ patch_16S_varpart + patch_C_fct_varpart + patch_ITS_varpart + guide_area() +
         legend.title = element_text(size = 14))
 ```
 
-![](C:/Users/Jeann/Documents/manuscrit/microbiome-ESSAQ_article/figures/01_fig3-1.png)<!-- -->
+![](figures/01_fig3-1.png)<!-- -->
 
 ``` r
 ggsave("fig3.pdf", device = "pdf", path = article_fig_path,
